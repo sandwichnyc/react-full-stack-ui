@@ -8,9 +8,9 @@ const InstructorApp = () => {
         <Router>
             <h1>Instructor Application</h1>
             <Switch>
-                <Route path="/" exact render={CourseList} />
-                <Route path="/courses" exact component={CourseList} />
-                <Route path="/courses/:id" component={CourseDetails} />
+                <Route exact path="/" render={() => <CourseList />} />
+                <Route exact path="/courses" render={() => <CourseList />} />
+                <Route path="/courses/:id" render={(props) => <CourseDetails {...props} />} />
             </Switch>
         </Router>
     );
